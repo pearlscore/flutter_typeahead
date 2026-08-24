@@ -1,3 +1,7 @@
+> [!NOTE]
+> **This repository is archived.** It is read-only and unmaintained.
+> Contact [@Augmentador](https://github.com/Augmentador) for information about its contents.
+
 <meta name='keywords' content='flutter, typeahead, autocomplete, customizable, floating'>
 
 [![Pub](https://img.shields.io/pub/v/flutter_typeahead)](https://pub.dev/packages/flutter_typeahead)
@@ -23,7 +27,7 @@ the loading bar, the animation, the debounce duration, etc.
 ## Installation
 See the [installation instructions on pub](https://pub.dartlang.org/packages/flutter_typeahead#-installing-tab-).
 
-Note: As for Typeahead 3.X this package is based on Dart 2.12 (null-safety). You may also want to explore the new built in Flutter 2 widgets that have similar behavior. 
+Note: As for Typeahead 3.X this package is based on Dart 2.12 (null-safety). You may also want to explore the new built in Flutter 2 widgets that have similar behavior.
 
 ## Usage examples
 You can import the package with:
@@ -109,7 +113,7 @@ Form(
             decoration: InputDecoration(
               labelText: 'City'
             )
-          ),          
+          ),
           suggestionsCallback: (pattern) {
             return CitiesService.getSuggestions(pattern);
           },
@@ -198,10 +202,10 @@ Please see the Cupertino code in the example project.
 ## Known Issues
 
 ### Animations
-Placing TypeAheadField in widgets with animations may cause the suggestions box 
-to resize incorrectly. Since animation times are variable, this has to be 
-corrected manually at the end of the animation. You will need to add a 
-SuggestionsBoxController described below and the following code for the 
+Placing TypeAheadField in widgets with animations may cause the suggestions box
+to resize incorrectly. Since animation times are variable, this has to be
+corrected manually at the end of the animation. You will need to add a
+SuggestionsBoxController described below and the following code for the
 AnimationController.
 ```dart
 void Function(AnimationStatus) _statusListener;
@@ -246,12 +250,12 @@ etc.
 
 ### Customizing the suggestions box
 TypeAhead provides default configurations for the suggestions box. You can,
-however, override most of them. This is done by passing a `SuggestionsBoxDecoration` 
+however, override most of them. This is done by passing a `SuggestionsBoxDecoration`
 to the `suggestionsBoxDecoration` property.
 
-Use the `offsetX` property in `SuggestionsBoxDecoration` to shift the suggestions box along the x-axis. 
-You may also pass BoxConstraints to `constraints` in `SuggestionsBoxDecoration` to adjust the width 
-and height of the suggestions box. Using the two together will allow the suggestions box to be placed 
+Use the `offsetX` property in `SuggestionsBoxDecoration` to shift the suggestions box along the x-axis.
+You may also pass BoxConstraints to `constraints` in `SuggestionsBoxDecoration` to adjust the width
+and height of the suggestions box. Using the two together will allow the suggestions box to be placed
 almost anywhere.
 
 #### Customizing the loader, the error and the "no items found" message
@@ -268,20 +272,20 @@ errorBuilder: (BuildContext context, Object error) =>
   )
 ```
 
-By default, the suggestions box will maintain the old suggestions while new 
-suggestions are being retrieved. To show a circular progress indicator 
+By default, the suggestions box will maintain the old suggestions while new
+suggestions are being retrieved. To show a circular progress indicator
 during retrieval instead, set `keepSuggestionsOnLoading` to false.
 
 #### Hiding the suggestions box
 There are three scenarios when you can hide the suggestions box.
 
-Set `hideOnLoading` to true to hide the box while suggestions are being 
-retrieved. This will also ignore the `loadingBuilder`. Set `hideOnEmpty` 
-to true to hide the box when there are no suggestions. This will also ignore 
-the `noItemsFoundBuilder`. Set `hideOnError` to true to hide the box when there 
+Set `hideOnLoading` to true to hide the box while suggestions are being
+retrieved. This will also ignore the `loadingBuilder`. Set `hideOnEmpty`
+to true to hide the box when there are no suggestions. This will also ignore
+the `noItemsFoundBuilder`. Set `hideOnError` to true to hide the box when there
 is an error retrieving suggestions. This will also ignore the `errorBuilder`.
 
-By default, the suggestions box will automatically hide when the keyboard is hidden. 
+By default, the suggestions box will automatically hide when the keyboard is hidden.
 To change this behavior, set `hideSuggestionsOnKeyboardHide` to false.
 
 #### Customizing the animation
@@ -338,8 +342,8 @@ By default, the list grows towards the bottom. However, you can use the `directi
 Set `autoFlipDirection` to true to allow the suggestions list to automatically flip direction whenever it detects that there is not enough space for the current direction. This is useful for scenarios where the TypeAheadField is in a scrollable widget or when the developer wants to ensure the list is always viewable despite different user screen sizes.
 
 #### Controlling the suggestions box
-Manual control of the suggestions box can be achieved by creating an instance of `SuggestionsBoxController` and 
-passing it to the `suggestionsBoxController` property. This will allow you to manually open, close, toggle, or 
+Manual control of the suggestions box can be achieved by creating an instance of `SuggestionsBoxController` and
+passing it to the `suggestionsBoxController` property. This will allow you to manually open, close, toggle, or
 resize the suggestions box.
 
 ## For more information
